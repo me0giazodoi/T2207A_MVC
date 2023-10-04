@@ -1,4 +1,4 @@
-﻿@model List<Exam.Entities.Department>
+﻿﻿@model List<Exam.Entities.Employee>
 @{
 }
 <div class="container">
@@ -7,7 +7,7 @@
             <h1>List Product</h1>
         </div>
         <div class="col-lg-6">
-            <a asp-controller="Department" asp-action="Create" class="btn btn-primary float-end">Add Department</a>
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-primary float-end">Add Employee</a>
         </div>
 
     </div>
@@ -20,10 +20,9 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Code</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Rank</th>
                         <th scope="col">
-                            number of
-                            personals
+                            Department
                         </th>
                         <th scope="col">Action</th>
                     </tr>
@@ -35,12 +34,9 @@
                             <th scope="row">@item.id</th>
                             <td>@item.name</td>
                             <td>@item.code</td>
-                            <td>@item.location</td>
-                            <td>@item.numberOfPersonals</td>
-                            <td>
-                                <a class="me-2" href="@Url.ActionLink("Edit", "Department", new {id=item.id})"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a onclick="return confirm('Ban muon xoa danh muc @item.name')" href="@Url.ActionLink("Delete", "Department", new {id=item.id})"><i class="fa-solid fa-trash"></i></a>
-                            </td>
+                            <td>@item.rank</td>
+                            <td>@item.department_id</td>
+                            
                         </tr>
                     }
                 </tbody>

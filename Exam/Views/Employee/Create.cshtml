@@ -1,4 +1,4 @@
-﻿@model Exam.Models.Department.DepartmentViewModel;
+﻿﻿@model Exam.Models.Employee.EmployeeViewModel;
 @{
 
 }
@@ -19,17 +19,21 @@
                     @Html.ValidationMessageFor(m=>m.code, "", new {@class="text-danger"})
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">NumberOfPersonals</label>
-                    <input type="number" name="numberOfPersonals" class="form-control" placeholder="Enter NumberOfPersonals">
-                    @Html.ValidationMessageFor(m=>m.numberOfPersonals, "", new {@class="text-danger"})
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">location</label>
-                    <textarea type="text" name="location" class="form-control"
-                              placeholder="Location"></textarea>
-                    @Html.ValidationMessageFor(m=>m.location, "", new {@class="text-danger"})
+                    <label class="form-label">Rank</label>
+                    <input type="text" name="rank" class="form-control" placeholder="Enter Rank">
+                    @Html.ValidationMessageFor(m=>m.rank, "", new {@class="text-danger"})
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" aria-label="Default select example" name="department_id">
+                        @foreach (var item in ViewBag.Departments)
+                        {
+                            <option value="@item.id">@item.name</option>
+                        }
+                    </select>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>
