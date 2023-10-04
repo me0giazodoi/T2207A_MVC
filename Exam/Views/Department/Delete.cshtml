@@ -1,0 +1,11 @@
+﻿@model Exam.Models.Department
+
+<h2>Xác nhận xóa phòng ban</h2>
+
+<p>Bạn có chắc chắn muốn xóa phòng ban "@Model.DepartmentName" không?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="DepartmentId" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
